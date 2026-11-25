@@ -11,7 +11,6 @@ const serviceImages: Record<string,string> = {
  'restauracao-de-fotos':'/images/restauracao-after.webp',
  'foto-personalizada':'/images/personalizada-familia.webp',
  'animacao-de-foto':'/media/animacao-foto-poster.jpg',
- 'projeto-personalizado':'/images/old-man-custom.webp'
 }
 const videoBySlug: Record<string,string> = {
  'video-transformacao':'/media/video-transformacao.mp4',

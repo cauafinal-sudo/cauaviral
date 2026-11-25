@@ -17,13 +17,6 @@ export default function Home() {
   </div></section>
   <section id="servicos" className="container sec"><Reveal><span className="eyebrow">Catálogo</span><h2>Serviços para cada ideia</h2><p className="catalogIntro">Veja exemplos reais em cada serviço. Nos vídeos, toque em play para assistir.</p></Reveal>
     <div className="bento">{services.map(s => <Reveal key={s.slug} className={`sp-${s.size}`}><ServiceCard s={s} /></Reveal>)}</div></section>
-  <section id="exemplos" className="container sec showcase"><Reveal><span className="eyebrow">Resultados e referências</span><h2>Veja exemplos de possibilidades</h2><p className="catalogIntro">Alguns resultados e referências dos serviços, organizados em uma seleção visual.</p></Reveal>
-   <div className="showcaseGrid"><figure className="showcaseItem showcaseWide"><img src="/images/ensaio-10.webp" alt="Ensaio fotográfico personalizado em ambiente externo" loading="lazy"/><figcaption><b>Ensaio fotográfico</b><span>Retratos com estética profissional</span></figcaption></figure>
-    <figure className="showcaseItem"><img src="/images/personalizada-familia.webp" alt="Fotografia personalizada de mãe e filha" loading="lazy"/><figcaption><b>Foto personalizada</b><span>Momentos especiais</span></figcaption></figure>
-    <figure className="showcaseItem"><img src="/images/old-man-custom.webp" alt="Exemplo de fotografia personalizada" loading="lazy"/><figcaption><b>Personalização</b><span>Novos cenários e estilos</span></figcaption></figure>
-    <figure className="showcaseItem"><img src="/images/restauracao-before.webp" alt="Fotografia antiga antes da restauração" loading="lazy"/><figcaption><b>Restauração</b><span>Recuperação de memória</span></figcaption></figure>
-    <figure className="showcaseItem"><img src="/images/restauracao-after.webp" alt="Fotografia antiga restaurada" loading="lazy"/><figcaption><b>Resultado restaurado</b><span>Mais nitidez e cor</span></figcaption></figure>
-   </div></section>
   <section id="como-funciona" className="container sec"><Reveal><span className="eyebrow">Contratação</span><h2>Como funciona</h2></Reveal>
     <Reveal><ol className="steps">{steps.map(([t,d],i) => <li key={t}><div className="num">{i+1}</div><h3>{t}</h3><p>{d}</p></li>)}</ol></Reveal></section>
   <section className="container sec"><Reveal><div className="care"><h2>Atendimento personalizado</h2><p>Cada pedido é tratado individualmente. Para ideias fora do catálogo, fale direto pelo WhatsApp.</p>
