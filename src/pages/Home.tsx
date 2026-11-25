@@ -16,7 +16,7 @@ export default function Home() {
       <span className="chip c1"><Film size={14}/> Vídeo</span><span className="chip c2"><Camera size={14}/> Fotografia</span><span className="chip c3"><History size={14}/> Restauração</span><span className="chip c4"><Wand2 size={14}/> IA</span></div>
   </div></section>
   <section id="servicos" className="container sec"><Reveal><span className="eyebrow">Catálogo</span><h2>Serviços para cada ideia</h2><p className="catalogIntro">Veja exemplos reais em cada serviço. Nos vídeos, toque em play para assistir.</p></Reveal>
-    <div className="bento">{services.map(s => <Reveal key={s.slug} className={`sp-${s.size}`}><ServiceCard s={s} /></Reveal>)}</div></section>
+    <div className="bento">{services.filter(s => s.slug !== "projeto-personalizado").map(s => <Reveal key={s.slug} className={`sp-${s.size}`}><ServiceCard s={s} /></Reveal>)}</div></section>
   <section id="exemplos" className="container sec showcase"><Reveal><span className="eyebrow">Resultados e referências</span><h2>Veja exemplos de possibilidades</h2><p className="catalogIntro">Alguns resultados e referências dos serviços, organizados em uma seleção visual.</p></Reveal>
    <div className="showcaseGrid"><figure className="showcaseItem showcaseWide"><img src="/images/ensaio-10.webp" alt="Ensaio fotográfico personalizado em ambiente externo" loading="lazy"/><figcaption><b>Ensaio fotográfico</b><span>Retratos com estética profissional</span></figcaption></figure>
     <figure className="showcaseItem"><img src="/images/personalizada-familia.webp" alt="Fotografia personalizada de mãe e filha" loading="lazy"/><figcaption><b>Foto personalizada</b><span>Momentos especiais</span></figcaption></figure>
