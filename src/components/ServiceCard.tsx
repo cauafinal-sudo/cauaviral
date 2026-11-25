@@ -23,7 +23,10 @@ function VideoModal({src,title,onClose}:{src:string;title:string;onClose:()=>voi
   return ()=>{document.removeEventListener('keydown',onKey);document.body.style.overflow=''}
  },[onClose])
  return <div className="videoModal" role="dialog" aria-modal="true" aria-label={title} onMouseDown={e=>{if(e.target===e.currentTarget)onClose()}}>
-  <div className="videoModalPanel"><button className="modalClose" onClick={onClose} aria-label="Fechar vídeo"><X size={22}/></button><div className="videoModalTitle">{title}</div><video autoPlay controls playsInline><source src={src} type="video/mp4"/>Seu navegador não reproduz vídeo.</video></div>
+  <div className="videoModalPanel"><button className="modalClose" onClick={onClose} aria-label="Fechar vídeo"><X size={22}/></button><div className="videoModalTitle">{title}</div><video autoPlay controls playsInline preload="auto">
+    <source src={src} type="video/mp4"/>
+    Seu navegador não reproduz vídeo.
+   </video></div>
  </div>
 }
 export function Preview({slug,name}:{slug:string;name:string}) {
