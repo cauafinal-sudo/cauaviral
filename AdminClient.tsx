@@ -1,0 +1,7 @@
+import {useEffect,useState} from 'react'
+import {Link,useParams} from 'react-router-dom'
+import {supabase} from '../lib/supabase'
+export default function AdminClient(){const {id}=useParams();const [client,setClient]=useState<any>(null),[orders,setOrders]=useState<any[]>([]),[error,setError]=useState('')
+ useEffect(()=>{if(!supabase||!id)return;(async()=>{const [p,o]=await Promise.all([supabase.from('profiles').select('*').eq('id',id).single(),supabase.from('orders').select('*').eq('user_id',id).order('created_at',{ascending:false})]);if(p.error)setError(p.error.message);else setClient(p.data);if(o.error)setError(o.error.message);else setOrders(o.data||[])})()},[id])
+ return <div className="container sec adminPage"><Link to="/admin" className="back">← Painel</Link>{error&&<div className="notice error">{error}</div>}{!client?<p>Carregando cliente…</p>:<><span className="eyebrow">Cadastro do cliente</span><h1>{client.full_name}</h1><p>{client.email} · {client.phone}</p><h2 className="adminSubhead">Histórico de pedidos</h2><div className="adminPanel">{orders.map(o=><div className="clientOrderLine" key={o.id}><div><b>{o.service_name}</b><small>{new Date(o.created_at).toLocaleString('pt-BR')}</small></div><span>{o.payment_status} · {o.production_status}</span><Link to={`/admin/pedidos/${o.id}`}>Atendimento →</Link></div>)}{!orders.length&&<p>Este cliente ainda não possui pedidos.</p>}</div></>}</div>
+}
