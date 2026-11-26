@@ -413,3 +413,121 @@ body{background:radial-gradient(ellipse at 50% -15%,#142b45 0%,var(--bg) 48%);}
 /* Etapa 4: checkout / pagamento e catálogo de orçamento */
 .customPreview{display:grid;place-items:center;background:radial-gradient(circle at 20% 20%,rgba(120,88,255,.26),transparent 45%),linear-gradient(135deg,#171321,#2d2544);color:#fff;min-height:210px}.customPreview>div{display:grid;gap:10px;justify-items:center;text-align:center}.customPreview strong{font-size:1.15rem}.customPreview small{color:rgba(255,255,255,.7)}
 .quantityPicker{display:grid;gap:10px;padding:14px 16px;margin:16px 0;border:1px solid var(--line,#ddd);border-radius:14px;max-width:320px}.quantityPicker>div{display:flex;align-items:center;gap:16px}.quantityPicker>div strong{min-width:24px;text-align:center}.quantityPicker>b{font-size:1.1rem}.paymentAction{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:16px 0}.paymentAction p{margin:0;max-width:480px}
+
+
+/* Correção efetiva do catálogo e da mídia na página de serviço */
+#servicos .buyButton,
+#servicos a.buyButton {
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:9px !important;
+  min-height:46px !important;
+  padding:12px 17px !important;
+  border:1px solid rgba(205,230,255,.55) !important;
+  border-radius:13px !important;
+  background:linear-gradient(115deg,#e8f4ff 0%,#8fc5f5 100%) !important;
+  color:#071522 !important;
+  font-size:.88rem !important;
+  line-height:1.15 !important;
+  font-weight:850 !important;
+  text-decoration:none !important;
+  white-space:nowrap !important;
+  box-shadow:0 7px 22px rgba(75,145,215,.25),inset 0 1px 0 rgba(255,255,255,.7) !important;
+  transition:transform .2s ease,filter .2s ease,box-shadow .2s ease !important;
+}
+#servicos .buyButton:hover,
+#servicos a.buyButton:hover {
+  transform:translateY(-2px) !important;
+  filter:brightness(1.06) !important;
+  box-shadow:0 12px 28px rgba(75,145,215,.38) !important;
+}
+#servicos .buyButton svg { flex:0 0 auto; }
+#servicos .sfoot { align-items:center !important; gap:12px !important; }
+#servicos .priceBox { flex:0 1 auto; min-width:0; }
+#servicos .priceBox b { font-size:clamp(1.25rem,1.5vw,1.6rem) !important; }
+
+.detailPreview {
+  width:100%;
+  min-width:0;
+  align-self:start;
+  overflow:hidden;
+  border:1px solid rgba(145,189,227,.24);
+  border-radius:22px;
+  background:#020811;
+}
+.detailPreview .cardMedia {
+  width:100%;
+  height:auto;
+  min-height:0;
+  max-height:none;
+  aspect-ratio:auto;
+  display:block;
+  overflow:hidden;
+  background:#020811;
+}
+.detailPreview .cardMedia:not(.videoCover):not(.comparePreview) img {
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:680px;
+  max-width:100%;
+  object-fit:contain !important;
+  padding:0;
+  margin:0 auto;
+}
+.detailPreview .videoCover {
+  display:block;
+  aspect-ratio:16 / 9;
+  width:100%;
+  height:auto;
+  max-height:none;
+}
+.detailPreview .videoCover > img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain !important;
+  padding:0;
+  background:#020811;
+}
+.detailVideoFrame {
+  width:100%;
+  aspect-ratio:16 / 9;
+  min-height:240px;
+  max-height:680px;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  background:#020811;
+}
+.detailVideoFrame video {
+  display:block;
+  width:100%;
+  height:100%;
+  max-height:680px;
+  object-fit:contain;
+  background:#020811;
+}
+.detailPreview .comparePreview {
+  width:100%;
+  aspect-ratio:4 / 3;
+  height:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+.detailPreview .comparePreview figure { min-width:0; min-height:0; height:100%; }
+.detailPreview .comparePreview img {
+  display:block;
+  width:100%;
+  height:100%;
+  max-height:none;
+  min-height:0;
+  object-fit:contain !important;
+  padding:8px;
+}
+@media(max-width:760px) {
+  #servicos .buyButton { min-height:44px !important; padding:10px 12px !important; font-size:.82rem !important; }
+  #servicos .sfoot { align-items:center !important; }
+  .detailVideoFrame { min-height:190px; }
+}
