@@ -531,3 +531,55 @@ body{background:radial-gradient(ellipse at 50% -15%,#142b45 0%,var(--bg) 48%);}
   #servicos .sfoot { align-items:center !important; }
   .detailVideoFrame { min-height:190px; }
 }
+
+
+/* Prévia de vídeo na página do serviço: proporção vertical real e botão de play visível. */
+.detailPreview .detailVideoCover {
+  position: relative;
+  display: block;
+  width: min(100%, 420px);
+  aspect-ratio: 9 / 16;
+  max-height: min(72vh, 680px);
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: #020811;
+  color: #fff;
+  cursor: pointer;
+  text-align: inherit;
+}
+.detailPreview .detailVideoCover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(2,7,13,.58), transparent 42%);
+  pointer-events: none;
+}
+.detailPreview .detailVideoCover > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.detailPreview .detailVideoCover .playButton {
+  width: 76px;
+  height: 76px;
+}
+.videoModalPanel { width: min(100%, 540px); }
+.videoModalPanel video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 78vh;
+  aspect-ratio: auto;
+  object-fit: contain;
+  background: #02050a;
+}
+@media (max-width: 640px) {
+  .detailPreview .detailVideoCover { width: min(100%, 360px); max-height: 68vh; }
+  .videoModalPanel { width: 100%; max-width: 100%; }
+  .videoModalPanel video { max-height: calc(100dvh - 120px); }
+}

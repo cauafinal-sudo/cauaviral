@@ -67,7 +67,7 @@ function VideoModal({src,title,onClose}:{src:string;title:string;onClose:()=>voi
 export function Preview({slug,name,detail=false}:{slug:string;name:string;detail?:boolean}) {
  const [videoOpen,setVideoOpen] = useState(false)
  const closeVideo = useCallback(() => setVideoOpen(false), [])
- if(detail && videoBySlug[slug]) return <div className="detailVideoFrame"><video src={videoBySlug[slug]} poster={serviceImages[slug]} controls playsInline preload="metadata">Seu navegador não reproduz este vídeo.</video></div>
+ if(detail && videoBySlug[slug]) return <><button type="button" className="detailVideoCover" onClick={()=>setVideoOpen(true)} aria-label={`Assistir demonstração: ${name}`}><img src={serviceImages[slug]} alt={`Capa do vídeo demonstrativo de ${name}`}/><span className="playButton"><Play fill="currentColor" size={28}/></span><span className="videoHint">Assistir demonstração</span></button>{videoOpen&&<VideoModal src={videoBySlug[slug]} title={name} onClose={closeVideo}/>}</>
  if(slug==='projeto-personalizado') return <div className="cardMedia customPreview"><div><MessageCircle size={30}/><strong>Seu projeto, sua ideia</strong><small>Orçamento personalizado</small></div></div>
  if(slug==='restauracao-de-fotos') return <div className="cardMedia comparePreview" aria-label="Comparação antes e depois da restauração">
   <figure><img src="/images/restauracao-before.webp" alt="Foto original antes da restauração"/><figcaption>Antes</figcaption></figure>
