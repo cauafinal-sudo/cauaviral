@@ -37,7 +37,7 @@ Deno.serve(async (req) => {
 
     const { data: service, error: serviceError } = await admin.from('service_catalog').select('service_name,amount,active').eq('slug', order.service_slug).single()
     if (serviceError || !service?.active) return json({ error: 'Serviço indisponível.' }, 400)
-    const qty = order.service_slug === 'restauracao-de-fotos' ? Math.max(1, Math.min(100, Number(order.quantity || 1))) : 1
+    const qty = Math.max(1, Math.min(100, Number(order.quantity || 1)))
     const cents = Math.round(Number(service.amount) * qty * 100)
     if (Math.round(Number(order.amount) * 100) !== cents) return json({ error: 'Valor do pedido não confere com o catálogo. Atualize o pedido ou fale com suporte.' }, 409)
 

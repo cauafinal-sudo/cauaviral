@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Link } from 'react-router-dom'
-import { ArrowUpRight, Play, X, MessageCircle } from 'lucide-react'
+import { ArrowUpRight, Play, X, MessageCircle, Sparkles, ShoppingBag } from 'lucide-react'
 import type { Service } from '../data/services'
 
 const serviceImages: Record<string,string> = {
@@ -85,7 +85,7 @@ export default function ServiceCard({s}:{s:Service}) {
  return <article className="svc"><Preview slug={s.slug} name={s.name}/><div className="sbody">
   <div className="serviceName"><h3>{s.name}</h3>{s.note&&<span className="packageNote">{s.note}</span>}</div>
   <p>{s.tagline}</p>
-  <div className="sfoot"><div className="priceBox">{s.prefix&&<small>{s.prefix}</small>}<b>{s.amount}</b>{s.note&&s.slug!=='restauracao-de-fotos'&&<small>{s.note}</small>}</div>
-   <Link className="go" to={`/servicos/${s.slug}`}>{s.custom?'Detalhes':'Contratar'} <ArrowUpRight size={17}/></Link>
+  <div className="sfoot"><div className="priceBox">{s.prefix&&<small>{s.prefix}</small>}<small className="startingAt">{s.custom?'Investimento':'A partir de'}</small><b>{s.amount}</b>{s.note&&<small>{s.note}</small>}</div>
+   <Link className="buyButton" to={`/servicos/${s.slug}`}><ShoppingBag size={17}/>{s.custom?'Ver detalhes':'Quero contratar'} <ArrowUpRight size={16}/></Link>
   </div></div></article>
 }
