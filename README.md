@@ -1,3 +1,11 @@
+# Cauã Viral — projeto
+
+Este ZIP contém as etapas anteriores e os arquivos incrementais da Etapa 4 (Stripe).
+
+**Comece por `ETAPA4-STRIPE-README.md`** para aplicar a migration `supabase/step4_stripe.sql`, configurar os secrets e publicar as Edge Functions. Não habilite chaves live antes dos testes em Stripe Test Mode.
+
+A prévia visual da Etapa 4 é `preview-etapa4.html` e não processa pagamentos.
+
 # Cauã Viral — Etapa 2: Supabase Auth + área de clientes
 
 Este projeto continua a etapa 1 (React, Vite, TypeScript) e mantém os componentes, catálogo, mídia, estilos e navegação existentes. Não inclui a implementação do chat (etapa 3).

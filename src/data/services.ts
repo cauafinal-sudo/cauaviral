@@ -7,6 +7,7 @@ export const services: Service[] = [
  { slug:'restauracao-de-fotos', name:'Restauração de fotos', price:'R$ 9,90 por imagem', amount:'R$ 9,90', note:'por imagem', size:'lg', tagline:'Dê nova vida a fotografias antigas.', description:'Recuperação e melhoria de fotografias antigas.', how:common },
  { slug:'foto-personalizada', name:'Foto personalizada', price:'R$ 14,90', amount:'R$ 14,90', size:'sm', tagline:'Montagens, cenários e fotos com familiares: a ideia é sua.', description:'Criação de imagens personalizadas. O cliente pode solicitar montagens, fotografias com familiares, cenários e outras ideias.', how:common },
  { slug:'animacao-de-foto', name:'Animação de foto', price:'R$ 24,90', amount:'R$ 24,90', size:'md', tagline:'Sua foto parada ganha vida em vídeo.', description:'Transformação de fotografias estáticas em vídeos animados.', how:common },
+ { slug:'projeto-personalizado', name:'Projeto personalizado', price:'A partir de R$ 29,90', amount:'A partir de R$ 29,90', size:'md', custom:true, tagline:'Uma ideia exclusiva? Vamos conversar e definir seu orçamento.', description:'Projetos fora do catálogo são avaliados individualmente e contratados diretamente pelo WhatsApp.', how:['Conte sua ideia pelo WhatsApp.','Receba um orçamento personalizado.','Combine os detalhes e prazo diretamente.'] },
 ]
 export const faq = [
  ['Preciso de conta para contratar?','Sim. Crie uma conta com nome, e-mail, telefone e senha. Depois, você poderá registrar pedidos e acompanhar tudo pela área do cliente.'],

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Link } from 'react-router-dom'
-import { ArrowUpRight, Play, X } from 'lucide-react'
+import { ArrowUpRight, Play, X, MessageCircle } from 'lucide-react'
 import type { Service } from '../data/services'
 
 const serviceImages: Record<string,string> = {
@@ -67,6 +67,7 @@ function VideoModal({src,title,onClose}:{src:string;title:string;onClose:()=>voi
 export function Preview({slug,name}:{slug:string;name:string}) {
  const [videoOpen,setVideoOpen] = useState(false)
  const closeVideo = useCallback(() => setVideoOpen(false), [])
+ if(slug==='projeto-personalizado') return <div className="cardMedia customPreview"><div><MessageCircle size={30}/><strong>Seu projeto, sua ideia</strong><small>Orçamento personalizado</small></div></div>
  if(slug==='restauracao-de-fotos') return <div className="cardMedia comparePreview" aria-label="Comparação antes e depois da restauração">
   <figure><img src="/images/restauracao-before.webp" alt="Foto original antes da restauração"/><figcaption>Antes</figcaption></figure>
   <figure><img src="/images/restauracao-after.webp" alt="Foto restaurada"/><figcaption>Depois</figcaption></figure>
