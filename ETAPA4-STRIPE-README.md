@@ -15,8 +15,8 @@ No Supabase existente → SQL Editor → New query, copie e execute o arquivo `s
 
 Catálogo online (BRL):
 - Vídeo transformação com IA — R$ 39,99
-- Ensaio 5 fotos — R$ 14,90
-- Ensaio 10 fotos — R$ 24,90
+- Ensaio 5 fotos — R$ 19,90
+- Ensaio 10 fotos — R$ 29,90
 - Restauração — R$ 9,90 por imagem (quantidade selecionada no site)
 - Foto personalizada — R$ 14,90
 - Animação de foto — R$ 24,90

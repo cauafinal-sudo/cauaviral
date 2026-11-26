@@ -60,7 +60,7 @@ Não existe botão de admin na interface de cliente. O cliente não pode promove
 
 ## 4. Preços
 
-Os valores do catálogo SQL foram alinhados com os cards existentes: transformação R$ 39,99; ensaio 5 fotos R$ 14,90; ensaio 10 fotos R$ 24,90; restauração R$ 9,90 por imagem; foto personalizada R$ 14,90; animação R$ 24,90. Serviço personalizado não cria pedido online; continua no WhatsApp.
+Os valores do catálogo SQL foram alinhados com os cards existentes: transformação R$ 39,99; ensaio 5 fotos R$ 19,90; ensaio 10 fotos R$ 29,90; restauração R$ 9,90 por imagem; foto personalizada R$ 14,90; animação R$ 24,90. Serviço personalizado não cria pedido online; continua no WhatsApp.
 
 Se os preços do site mudarem, atualize também os registros de `service_catalog` no SQL para que a criação de pedidos use o valor vigente.
 

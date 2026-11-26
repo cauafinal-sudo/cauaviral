@@ -5,8 +5,8 @@ create extension if not exists pgcrypto;
 -- Catálogo com preços definitivos (BRL). O serviço de orçamento personalizado não cobra online.
 insert into public.service_catalog(slug,service_name,service_type,amount,active) values
  ('video-transformacao','Vídeo transformação com IA','video',39.99,true),
- ('ensaio-5-fotos','Ensaio fotográfico com IA — 5 fotos','photo',14.90,true),
- ('ensaio-10-fotos','Ensaio fotográfico com IA — 10 fotos','photo',24.90,true),
+ ('ensaio-5-fotos','Ensaio fotográfico com IA — 5 fotos','photo',19.90,true),
+ ('ensaio-10-fotos','Ensaio fotográfico com IA — 10 fotos','photo',29.90,true),
  ('restauracao-de-fotos','Restauração de fotos (por imagem)','restoration',9.90,true),
  ('foto-personalizada','Foto personalizada','custom_image',14.90,true),
  ('animacao-de-foto','Animação de foto','animation',24.90,true)

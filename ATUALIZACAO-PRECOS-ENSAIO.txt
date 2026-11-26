@@ -1,0 +1,22 @@
+ATUALIZAÇÃO DE PREÇOS — CAUÃ VIRAL
+
+Novos preços:
+- Ensaio fotográfico com IA — 5 fotos: R$ 19,90
+- Ensaio fotográfico com IA — 10 fotos: R$ 29,90
+
+Arquivos incluídos:
+- src/data/services.ts: preços mostrados no catálogo e na página de contratação;
+- supabase/update_ensaio_prices.sql: atualização do catálogo real no Supabase;
+- supabase/schema.sql e supabase/step4_stripe.sql: preços corretos para instalações novas;
+- arquivos HTML/README: atualização das prévias e documentação.
+
+COMO PUBLICAR
+1. Extraia este ZIP.
+2. Copie os arquivos e pastas mantendo a mesma estrutura para a pasta local do repositório clonado cauaviral.
+3. Substitua os arquivos quando solicitado. Não apague nem substitua a pasta .git ou arquivos .env.
+4. No GitHub Desktop, confira os arquivos alterados, faça Commit e depois Push origin.
+5. No Supabase, abra SQL Editor, crie uma consulta, cole o conteúdo de supabase/update_ensaio_prices.sql e clique em Run.
+6. Aguarde o deploy do Vercel e teste os dois pacotes até a tela do Stripe, conferindo os valores.
+
+IMPORTANTE
+O SQL de migração altera apenas o catálogo para novos pedidos. Pedidos já registrados preservam o valor que tinham no momento da criação.
